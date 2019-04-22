@@ -157,12 +157,6 @@ allprojects {
 }
 ```
 
-### step2 添加依赖:
-```groovy
-dependencies {
-	   implementation 'com.github.limedroid:XDroidMvp:v2.0.1'
-}
-```
 
 ## 重要说明
 
