@@ -157,6 +157,14 @@ allprojects {
 }
 ```
 
+### step2 添加依赖:
+```groovy
+dependencies {
+	   implementation 'com.github.fanlcly:FDroid_mvp:0.0.1'
+}
+```
+
+
 
 ## 重要说明
 
