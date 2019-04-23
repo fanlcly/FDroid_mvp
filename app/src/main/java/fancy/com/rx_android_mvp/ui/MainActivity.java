@@ -1,9 +1,12 @@
 package fancy.com.rx_android_mvp.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +24,8 @@ public class MainActivity extends XBaseActivity {
     TabLayout tabLayout;
     @BindView(R.id.view_pager)
     ViewPager viewPager;
+    @BindView(R.id.tv_home)
+    TextView tvHome;
 
     List<Fragment> fragmentList = new ArrayList<>();
     String[] titles = {"首页", "第二个页面", "第三个页面"};
@@ -43,6 +48,13 @@ public class MainActivity extends XBaseActivity {
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(3);
         tabLayout.setupWithViewPager(viewPager);
+
+        tvHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mActivity,RecyclerActivity.class));
+            }
+        });
     }
 
 

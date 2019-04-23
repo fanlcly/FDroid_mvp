@@ -3,4 +3,86 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+
+
+    <!--基本颜色-->
+
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="black">#000000</color>
+
+    <color name="red">#FF0000</color>
+
+    <color name="main_color">#118AFD</color>
+
+    <!--文字颜色-->
+
+
+    <color name="text_white">#FFFFFF</color>
+
+    <color name="text_main">#118AFD</color>
+
+    <color name="text_999">#999</color>
+
+    <color name="text_222">#222</color>
+
+    <color name="text_333">#333</color>
+
+    <color name="text_666">#666</color>
+
+    <color name="text_ccc">#ccc</color>
+
+    <color name="text_ffa100">#ffa100</color>
+
+    <color name="text_3990cb">#3990CB</color>
+
+    <color name="text_feecbb">#FEECBB</color>
+
+    <color name="text_f76a6b">#F76A6B</color>
+
+    <color name="text_93D6FF">#93D6FF</color>
+
+    <color name="text_94A9C5">#94A9C5</color>
+
+    <!--分割线颜色-->
+
+
+    <color name="divider_common">#ddd</color>
+
+    <color name="divider_ccc">#ccc</color>
+
+    <!--背景颜色-->
+
+
+    <color name="bg_common">#f1f1f1</color>
+
+    <color name="bg_72B9FD">#72B9FD</color>
+
+    <color name="bg_0099ff">#0099ff</color>
+
+    <color name="bg_f7f8fa">#F7F8FA</color>
+
+    <color name="bg_99dbff">#99DBFF</color>
+
+    <color name="bg_3ea8ff">#3EA8FF</color>
+
+    <color name="bg_c5dac9">#c5dac9</color>
+
+    <color name="bg_trans_60">#99000000</color>
+
+    <!--黑色60%透明度-->
+
+
+    <color name="bg_trans_10">#19000000</color>
+
+    <!--黑色10%透明度-->
+
+
+    <color name="bg_trans_5">#08000000</color>
+
+    <!--黑色5%透明度-->
 </resources>

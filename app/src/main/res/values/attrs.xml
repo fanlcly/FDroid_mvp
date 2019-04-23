@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="CustomErrorView">
+        <attr name="error_src" format="reference" />
+        <attr name="error_text" format="string" />
+        <attr name="btn_text" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CustomEmptyView">
+        <attr name="src" format="reference" />
+        <attr name="text" format="string" />
+    </declare-styleable>
+
+</resources>
