@@ -2,7 +2,6 @@ package fancy.com.rx_android_mvp.ui;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 
 import com.fancy.androidutils.recyclerviewhelper.base.BaseQuickAdapter;
 import com.fancy.androidutils.recyclerviewhelper.base.BaseViewHolder;

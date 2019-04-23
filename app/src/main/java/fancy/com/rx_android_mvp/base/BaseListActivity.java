@@ -1,16 +1,13 @@
 package fancy.com.rx_android_mvp.base;
 
 import android.content.Context;
-import android.content.Entity;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.widget.BaseAdapter;
 
 import com.fancy.androidutils.recyclerviewhelper.base.BaseQuickAdapter;
 import com.fancy.androidutils.recyclerviewhelper.base.BaseViewHolder;
@@ -19,20 +16,16 @@ import com.fancy.androidutils.utils.ToastUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import fancy.com.rx_android_mvp.entity.ListEntity;
-import fancy.com.rx_android_mvp.net.Api;
 import fancy.com.rx_android_mvp.widget.CustomEmptyView;
 import fancy.com.rx_android_mvp.widget.CustomErrorView;
 import fancy.com.rxmvp.mvp.XBaseActivity;
 import fancy.com.rxmvp.net.HttpClient;
 import fancy.com.rxmvp.net.RxBaseCallBack;
 import io.reactivex.Observable;
-import retrofit2.Call;
 import retrofit2.Response;
 
 /**
- * file explain
+ * 含列表的数据结构的base类
  *
  * @author fanlei
  * @version 1.0 2019/4/23 0023
