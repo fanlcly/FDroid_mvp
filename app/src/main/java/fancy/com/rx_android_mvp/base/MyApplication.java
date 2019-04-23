@@ -2,6 +2,7 @@ package fancy.com.rx_android_mvp.base;
 
 import android.app.Application;
 
+import fancy.com.rx_android_mvp.net.HeaderInterceptor;
 import fancy.com.rxmvp.BuildConfig;
 import fancy.com.rxmvp.net.HttpClient;
 import fancy.com.rxmvp.net.NetError;
@@ -44,14 +45,8 @@ public class MyApplication extends Application {
 
             @Override
             public RequestHeader configHeader() {
-                return null;
+                return new HeaderInterceptor();
             }
-
-            @Override
-            public boolean handleError(Error error) {
-                return false;
-            }
-
         });
     }
 

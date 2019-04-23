@@ -20,7 +20,4 @@ public interface NetProvider {
     boolean configLogEnable();
 
     RequestHeader configHeader();
-
-    boolean handleError(Error error);
-
 }
