@@ -6,7 +6,7 @@
 
 **无需写`Contract`！ 无需写`Present`接口！  无需写`View`接口!**
 
-新增：
+功能：
 
 * Mvp实现
 * `RxJava` & `RxAndroid`
@@ -19,10 +19,11 @@
 	* 。。。。
 * 无需担心rx内存泄漏
 
-保留：
-
-* 提供`XActivity`、`XFragment`等基类，可快速进行开发
+* 提供`XBaseActivity`、`XBaseFragment`等基类，可快速进行开发
 * 内置了`RxBus`，可自由切换到其他事件订阅库
+
+
+
 
 
 
@@ -176,5 +177,6 @@ dependencies {
 
 ## 感谢声明
 - 感谢所有优秀和MVP相关的开源项目
+- 特别感谢[XDroidMvp](https://github.com/limedroid/XDroidMvp)的作者，在你的源码基础上，作了简化和简单的修改
 
 ### End
