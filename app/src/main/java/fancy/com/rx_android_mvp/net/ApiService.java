@@ -3,12 +3,9 @@ package fancy.com.rx_android_mvp.net;
 import java.util.List;
 
 import fancy.com.rx_android_mvp.entity.ListEntity;
-import fancy.com.rx_android_mvp.entity.TopNewsEntity;
-import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import retrofit2.Response;
 import retrofit2.http.GET;
-import retrofit2.http.Url;
 
 /**
  * ApiService
@@ -20,7 +17,7 @@ import retrofit2.http.Url;
 public interface ApiService {
 
     @GET("https://www.apiopen.top/journalismApi/")
-    Observable<Response<TopNewsEntity>> getTopNews();
+    Observable<Response<String>> getTopNews();
 
     /**
      * 统计表数据

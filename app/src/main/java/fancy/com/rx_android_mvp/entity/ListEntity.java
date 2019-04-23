@@ -1,6 +1,5 @@
 package fancy.com.rx_android_mvp.entity;
 
-import fancy.com.rxmvp.net.IModel;
 
 /**
  * file explain

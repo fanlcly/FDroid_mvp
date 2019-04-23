@@ -1,13 +1,7 @@
 package fancy.com.rx_android_mvp.net;
 
-import com.trello.rxlifecycle2.LifecycleTransformer;
-
-import org.reactivestreams.Subscriber;
-
 import fancy.com.rx_android_mvp.UrlConfig;
 import fancy.com.rxmvp.net.HttpClient;
-import fancy.com.rxmvp.net.IModel;
-import io.reactivex.Flowable;
 
 /**
  * file explain

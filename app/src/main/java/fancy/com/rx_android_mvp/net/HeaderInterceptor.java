@@ -8,7 +8,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * file explain
+ * 关于请求头的拦截器
  *
  * @author fanlei
  * @version 1.0 2019/4/23 0023
