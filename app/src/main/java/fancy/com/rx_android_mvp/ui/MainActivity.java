@@ -52,7 +52,8 @@ public class MainActivity extends XBaseActivity {
         tvHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mActivity,RecyclerActivity.class));
+//                startActivity(new Intent(mActivity,RecyclerActivity.class));
+                startActivity(new Intent(mActivity,TestActivity.class));
             }
         });
     }

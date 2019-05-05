@@ -34,9 +34,11 @@ public class HomeModel {
                 .compose(view.<Response<List<Entity>>>bindToLifecycle())
                 .subscribe(new RxBaseCallBack<List<Entity>>(context) {
                     @Override
-                    public void onSuc(Response<List<Entity>> response) {
+                    public void onSuc(List<Entity> response) {
                         Log.i("fanlcly", "onSuc: 成功了");
                     }
+
+
 
                     @Override
                     public void onFail(String message, int failCode) {

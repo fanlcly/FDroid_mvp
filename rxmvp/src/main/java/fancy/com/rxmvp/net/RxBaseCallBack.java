@@ -32,7 +32,7 @@ public abstract class RxBaseCallBack<T> extends DisposableObserver<Response<T>> 
     @Override
     public void onNext(Response<T> response) {
         if (response.raw().code() == 200) {
-            onSuc(response);
+            onSuc(response.body());
         } else {//失败响应
             onFail(NetError.buildError(response).getErrorMessage(), response.raw().code());
         }
@@ -61,7 +61,7 @@ public abstract class RxBaseCallBack<T> extends DisposableObserver<Response<T>> 
         }
     }
 
-    public abstract void onSuc(Response<T> response);
+    public abstract void onSuc(T response);
 
     public abstract void onFail(String message, int failCode);
 

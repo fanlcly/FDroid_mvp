@@ -116,7 +116,7 @@ public abstract class BaseListActivity<T> extends XBaseActivity {
         HttpClient.getInstance().getObservable(observable.compose(this.<Response<List<T>>>bindToLifecycle()))
                 .subscribe(new RxBaseCallBack<List<T>>(mActivity) {
                     @Override
-                    public void onSuc(Response<List<T>> response) {
+                    public void onSuc(List<T> response) {
                         if (refreshLayout != null) {
                             refreshLayout.setRefreshing(false);
                         }
@@ -124,7 +124,7 @@ public abstract class BaseListActivity<T> extends XBaseActivity {
                             items.clear();
                         }
                         // dialog.dismiss();
-                        List<T> list = response.body();
+                        List<T> list = response;
 
                         if (list == null) {
                             return;
