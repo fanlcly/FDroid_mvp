@@ -56,7 +56,7 @@ public abstract class XBaseLazyFragment <P extends IPresent>
 
     public VDelegate getvDelegate() {
         if (vDelegate == null) {
-            vDelegate = VDelegateImpl.create(context);
+            vDelegate = VDelegateImpl.create(mActivity);
         }
         return vDelegate;
     }

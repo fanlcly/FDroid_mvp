@@ -1,10 +1,18 @@
 package com.fancy.rx_android_mvp.present;
 
 import android.content.Context;
+import android.content.Entity;
+import android.util.Log;
 
 import com.fancy.rx_android_mvp.fragment.HomeFragment;
-import com.fancy.rx_android_mvp.model.HomeModel;
+import com.fancy.rx_android_mvp.net.Api;
 import com.fancy.rxmvp.mvp.XBasePresent;
+import com.fancy.rxmvp.net.HttpClient;
+import com.fancy.rxmvp.net.RxBaseCallBack;
+
+import java.util.List;
+
+import retrofit2.Response;
 
 /**
  * HomePresent
@@ -15,6 +23,23 @@ import com.fancy.rxmvp.mvp.XBasePresent;
  */
 public class HomePresent extends XBasePresent<HomeFragment> {
         public void LoadData(Context context) {
-            new HomeModel(getV(),context).getHomeModel();
+            HttpClient.getInstance().getObservable(Api.getApiService().totalEmployInfo())
+                    .compose(getV().<Response<List<Entity>>>bindToLifecycle())
+                    .subscribe(new RxBaseCallBack<List<Entity>>(context) {
+                        @Override
+                        public void onSuc(List<Entity> response) {
+                            Log.i("fanlcly", "onSuc: 成功了");
+                        }
+
+
+
+                        @Override
+                        public void onFail(String message, int failCode) {
+                            Log.i("fanlcly", "onFail: 失败了");
+                        }
+
+                    });
+
+
         }
 }

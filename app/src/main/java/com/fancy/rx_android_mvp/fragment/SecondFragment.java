@@ -44,7 +44,7 @@ public class SecondFragment extends XBaseLazyFragment {
 
         HttpClient.getInstance().getObservable(Api.getApiService().totalEmployInfo())
                 .compose(this.<Response<List<Entity>>>bindToLifecycle())
-                .subscribe(new RxBaseCallBack<List<Entity>>(context) {
+                .subscribe(new RxBaseCallBack<List<Entity>>(mActivity) {
                     @Override
                     public void onSuc(List<Entity> response) {
                         Log.i("fanlcly", "onSuc: 成功了");

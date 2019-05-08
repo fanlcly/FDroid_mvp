@@ -25,7 +25,7 @@ import java.lang.reflect.Field;
 public class LazyFragment extends RxFragment {
 
     protected LayoutInflater layoutInflater;
-    protected Activity context;
+    protected Activity mActivity;
 
     private View rootView;
     private ViewGroup container;
@@ -70,10 +70,10 @@ public class LazyFragment extends RxFragment {
                 isInitReady = true;
             } else {
                 LayoutInflater mInflater = layoutInflater;
-                if (mInflater == null && context != null) {
-                    mInflater = LayoutInflater.from(context);
+                if (mInflater == null && mActivity != null) {
+                    mInflater = LayoutInflater.from(mActivity);
                 }
-                layout = new FrameLayout(context);
+                layout = new FrameLayout(mActivity);
                 layout.setTag(TAG_ROOT_FRAMELAYOUT);
 
                 View view = getPreviewLayout(mInflater, layout);
@@ -197,7 +197,7 @@ public class LazyFragment extends RxFragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof Activity) {
-            this.context = (Activity) context;
+            this.mActivity = (Activity) context;
         }
     }
 
@@ -205,7 +205,7 @@ public class LazyFragment extends RxFragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        context = null;
+        mActivity = null;
 
         try {
             Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
