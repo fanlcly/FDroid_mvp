@@ -27,6 +27,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     annotationProcessor rootProject.ext.dependencies["butterknife-apt"]
     implementation project(':rxmvp')
-    implementation 'com.github.fanlcly:android_utils:0.0.3'
+    implementation 'com.github.fanlcly:android_utils:0.0.5'
 
 }

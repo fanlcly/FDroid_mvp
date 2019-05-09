@@ -14,9 +14,9 @@ import java.util.List;
 import butterknife.BindView;
 import fancy.com.rx_android_mvp.R;
 import com.fancy.rx_android_mvp.adapter.HomeFragmentAdapter;
-import com.fancy.rx_android_mvp.fragment.HomeFragment;
-import com.fancy.rx_android_mvp.fragment.SecondFragment;
-import com.fancy.rx_android_mvp.fragment.ThirdFragment;
+import com.fancy.rx_android_mvp.fragment.JokeFragment;
+import com.fancy.rx_android_mvp.fragment.NewsFragment;
+import com.fancy.rx_android_mvp.fragment.GirlFragment;
 import com.fancy.rxmvp.mvp.XBaseActivity;
 
 public class MainActivity extends XBaseActivity {
@@ -28,7 +28,7 @@ public class MainActivity extends XBaseActivity {
     TextView tvHome;
 
     List<Fragment> fragmentList = new ArrayList<>();
-    String[] titles = {"首页", "第二个页面", "第三个页面"};
+    String[] titles = {"笑话", "新闻", "美女"};
     private HomeFragmentAdapter adapter;
 
     @Override
@@ -39,9 +39,9 @@ public class MainActivity extends XBaseActivity {
 
     @Override
     public void initData(Bundle savedInstanceState) {
-        fragmentList.add(HomeFragment.newInstance());
-        fragmentList.add(SecondFragment.newInstance());
-        fragmentList.add(ThirdFragment.newInstance());
+        fragmentList.add(JokeFragment.newInstance());
+        fragmentList.add(NewsFragment.newInstance());
+        fragmentList.add(GirlFragment.newInstance());
         if (adapter == null) {
             adapter = new HomeFragmentAdapter(getSupportFragmentManager(), fragmentList, titles);
         }

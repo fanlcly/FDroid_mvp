@@ -13,11 +13,8 @@ import com.fancy.androidutils.recyclerviewhelper.base.BaseViewHolder;
 import com.fancy.androidutils.recyclerviewhelper.decoration.LinearDividerItemDecoration;
 import com.fancy.androidutils.utils.ToastUtils;
 import com.fancy.rx_android_mvp.base.BaseLazyListFragment;
-import com.fancy.rx_android_mvp.base.BaseListActivity;
 import com.fancy.rx_android_mvp.entity.ListEntity;
 import com.fancy.rx_android_mvp.net.Api;
-import com.fancy.rx_android_mvp.present.HomePresent;
-import com.fancy.rxmvp.mvp.XBaseLazyFragment;
 import com.fancy.rxmvp.net.HttpClient;
 
 import java.util.List;
@@ -29,10 +26,10 @@ import java.util.List;
  * @version 1.0 2019/4/18 0018
  * @since JDK 1.8
  */
-public class HomeFragment extends BaseLazyListFragment<ListEntity> {
+public class JokeFragment extends BaseLazyListFragment<ListEntity> {
 
-    public static HomeFragment newInstance() {
-        return new HomeFragment();
+    public static JokeFragment newInstance() {
+        return new JokeFragment();
     }
 
     @Override
