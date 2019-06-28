@@ -4,6 +4,7 @@
     package="fancy.com.rx_android_mvp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name="com.fancy.rx_android_mvp.base.MyApplication"
@@ -24,6 +25,7 @@
         </activity>
         <activity android:name="com.fancy.rx_android_mvp.ui.RecyclerActivity" />
         <activity android:name="com.fancy.rx_android_mvp.ui.TestActivity" />
+        <activity android:name="com.fancy.rx_android_mvp.ui.BaseWebActivity" />
     </application>
 
 </manifest>

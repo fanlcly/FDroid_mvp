@@ -35,6 +35,13 @@ public interface ApiService {
             , @Query("ftags") String ftags);
 
 
+    //    @GET("http://image.baidu.com/channel/listjson?pn=0&rn=30&tag1=明星&tag2=全部&ie=utf8")
+//    @GET("http://image.baidu.com/search/index?tn=baiduimage&word=%E6%80%A7%E6%84%9F")
+    @GET("http://image.baidu.com/search/index")
+    Observable<Response<BaseModle<List<GirlEntity>>>> getGirlImage(@Query("tn") String tn
+            , @Query("word") String word);
+
+
     //    http://v.juhe.cn/toutiao/index?type=top&key=3dc86b09a2ee2477a5baa80ee70fcdf5
     @GET("http://v.juhe.cn/toutiao/index")
     Observable<Response<NewsModel>> getNews(@Query("type") String type

@@ -1,12 +1,18 @@
 package com.fancy.rx_android_mvp.base;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.Intent;
 
 import com.fancy.rx_android_mvp.net.HeaderInterceptor;
+
 import fancy.com.rxmvp.BuildConfig;
+
+import com.fancy.rx_android_mvp.service.X5NetService;
 import com.fancy.rxmvp.net.HttpClient;
 import com.fancy.rxmvp.net.NetProvider;
 import com.fancy.rxmvp.net.interceptor.RequestHeader;
+
 import okhttp3.Interceptor;
 
 /**
@@ -18,9 +24,14 @@ import okhttp3.Interceptor;
  */
 public class MyApplication extends Application {
 
+    public  static Context mContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext = getApplicationContext();
+        // 初始化X5WebView
+        preInitX5Core();
         HttpClient.registerProvider(new NetProvider() {
             @Override
             public long configConnectTimeoutMills() {
@@ -47,6 +58,14 @@ public class MyApplication extends Application {
                 return new HeaderInterceptor();
             }
         });
+    }
+
+
+
+    private void preInitX5Core() {
+        //预加载x5内核
+        Intent intent = new Intent(this, X5NetService.class);
+        startService(intent);
     }
 
 

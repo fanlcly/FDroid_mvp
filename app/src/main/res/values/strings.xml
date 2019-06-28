@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">rx_android_mvp</string>
+
+    <string name="yt_webview_pull_to_refresh">下拉刷新</string>
+    <string name="yt_webview_release_to_refresh">释放立即刷新</string>
+    <string name="yt_webview_refreshing">正在刷新...</string>
+    <string name="yt_webview_refresh_success">刷新成功</string>
+    <string name="yt_webview_refresh_fail">刷新失败</string>
 </resources>

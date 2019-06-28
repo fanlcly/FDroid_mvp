@@ -126,7 +126,7 @@ public class GirlFragment extends XBaseLazyFragment {
 
 
     public Observable<Response<BaseModle<List<GirlEntity>>>> getRequestMethod() {
-        return HttpClient.getInstance().getObservable(Api.getApiService().getGirlImage(currentPage, 20, "美女", "诱惑","性感"));
+        return HttpClient.getInstance().getObservable(Api.getApiService().getGirlImage("baiduimage","性感"));
     }
 
 

@@ -1,6 +1,7 @@
 package com.fancy.rx_android_mvp.fragment;
 
 import android.content.Entity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -27,6 +28,7 @@ import com.fancy.rx_android_mvp.entity.NewsModel;
 import com.fancy.rx_android_mvp.net.Api;
 import com.fancy.rx_android_mvp.net.BaseModle;
 import com.fancy.rx_android_mvp.net.MyCallBack;
+import com.fancy.rx_android_mvp.ui.BaseWebActivity;
 import com.fancy.rxmvp.mvp.XBaseLazyFragment;
 import com.fancy.rxmvp.net.HttpClient;
 import com.fancy.rxmvp.net.RxBaseCallBack;
@@ -63,7 +65,10 @@ public class NewsFragment extends XBaseLazyFragment {
         newsAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                ToastUtils.init(mActivity).show(i);
+                Intent intent = new Intent(mActivity, BaseWebActivity.class);
+                intent.putExtra("title",items.get(i).getTitle());
+                intent.putExtra("url",items.get(i).getUrl());
+                startActivity(intent);
             }
         });
 
