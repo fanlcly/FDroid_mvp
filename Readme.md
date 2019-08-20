@@ -169,7 +169,7 @@ dependencies {
 
 ## 重要说明
 
-* [ButterKnife](https://github.com/JakeWharton/butterknife)使用的是8.4.0版本，重点是 `@BindView`，可以去项目官网查看。
+* [ButterKnife](https://github.com/JakeWharton/butterknife)使用的是10.0.0版本，兼容了androidx,重点是 `@BindView`，可以去项目官网查看。
 * [Rxlifecycle](https://github.com/trello/RxLifecycle)使用的是1.0版本，具体如何使用可以查看官网。
 * [RxPermissions](https://github.com/tbruyelle/RxPermissions)使用的是0.9.1版本，具体如何使用可以查看官网。
 * [retrofit](https://github.com/square/retrofit)，具体如何使用可以查看官网。
