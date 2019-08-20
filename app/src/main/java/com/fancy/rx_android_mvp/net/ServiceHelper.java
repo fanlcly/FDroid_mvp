@@ -1,7 +1,8 @@
 package com.fancy.rx_android_mvp.net;
 
-import android.support.annotation.StringDef;
 
+
+import androidx.annotation.StringDef;
 
 import java.util.HashMap;
 import java.util.Map;
