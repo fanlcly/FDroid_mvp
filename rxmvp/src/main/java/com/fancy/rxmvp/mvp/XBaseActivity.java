@@ -8,12 +8,12 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.tbruyelle.rxpermissions2.RxPermissions;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import butterknife.Unbinder;
 import com.fancy.rxmvp.MvpConfig;
 import com.fancy.rxmvp.event.BusProvider;
 import com.fancy.rxmvp.utils.KnifeHelper;
+import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 
 /**
  * activity基类

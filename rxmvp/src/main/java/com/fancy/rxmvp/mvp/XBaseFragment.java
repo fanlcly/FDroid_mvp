@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 
 import com.tbruyelle.rxpermissions2.RxPermissions;
-import com.trello.rxlifecycle2.components.RxFragment;
 
 import butterknife.Unbinder;
 import com.fancy.rxmvp.MvpConfig;
 import com.fancy.rxmvp.event.BusProvider;
 import com.fancy.rxmvp.utils.KnifeHelper;
+import com.trello.rxlifecycle3.components.support.RxFragment;
 
 /**
  * fragment基类

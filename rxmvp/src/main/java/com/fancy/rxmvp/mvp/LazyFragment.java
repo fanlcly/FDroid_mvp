@@ -12,7 +12,8 @@ import android.widget.FrameLayout;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.trello.rxlifecycle2.components.support.RxFragment;
+
+import com.trello.rxlifecycle3.components.support.RxFragment;
 
 import java.lang.reflect.Field;
 
