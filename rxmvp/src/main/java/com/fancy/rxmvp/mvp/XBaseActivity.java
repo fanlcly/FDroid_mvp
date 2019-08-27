@@ -7,6 +7,7 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import com.fancy.rxmvp.utils.AppManager;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.Unbinder;
@@ -33,6 +34,7 @@ public abstract class XBaseActivity<P extends IPresent> extends RxAppCompatActiv
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity = this;
+        AppManager.getAppManager().addActivity(this);
         getP();
 
         if (getLayoutId() > 0) {
@@ -102,6 +104,7 @@ public abstract class XBaseActivity<P extends IPresent> extends RxAppCompatActiv
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        AppManager.getAppManager().finishActivity(this);
         if (useEventBus()) {
             BusProvider.getBus().unregister(this);
         }
