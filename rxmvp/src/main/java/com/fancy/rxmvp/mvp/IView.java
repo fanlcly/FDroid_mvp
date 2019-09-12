@@ -15,11 +15,12 @@ public interface IView<P> {
 
     void bindEvent();
 
+    int getLayoutId();
+
     void initData(Bundle savedInstanceState);
 
     int getOptionsMenuId();
 
-    int getLayoutId();
 
     boolean useEventBus();
 
