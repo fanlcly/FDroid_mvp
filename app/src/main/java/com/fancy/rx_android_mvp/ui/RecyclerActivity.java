@@ -26,7 +26,6 @@ import retrofit2.Response;
  */
 public class RecyclerActivity extends BaseListActivity<ListEntity> {
 
-
     @Override
     public void initData(Bundle savedInstanceState) {
         super.initData(savedInstanceState);

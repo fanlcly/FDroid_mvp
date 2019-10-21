@@ -10,13 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.fancy.androidutils.recyclerviewhelper.base.BaseQuickAdapter;
-import com.fancy.androidutils.recyclerviewhelper.base.BaseViewHolder;
-import com.fancy.androidutils.utils.ToastUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fancy.androidutils.recyclerviewhelper.base.BaseQuickAdapter;
+import com.fancy.androidutils.recyclerviewhelper.base.BaseViewHolder;
+import com.fancy.androidutils.utils.ToastUtils;
 import com.fancy.rx_android_mvp.widget.CustomEmptyView;
 import com.fancy.rx_android_mvp.widget.CustomErrorView;
 import com.fancy.rxmvp.mvp.XBaseActivity;
