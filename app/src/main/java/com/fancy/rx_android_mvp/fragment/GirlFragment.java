@@ -77,12 +77,7 @@ public class GirlFragment extends XBaseLazyFragment {
     private void setAdapter() {
         girlAdapter = new GirlAdapter(items);
         recyclerView.setAdapter(girlAdapter);
-        girlAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
-            @Override
-            public void onLoadMoreRequested() {
-                requestData();
-            }
-        }, recyclerView);
+        girlAdapter.setOnLoadMoreListener(() -> requestData(), recyclerView);
     }
 
     /**
