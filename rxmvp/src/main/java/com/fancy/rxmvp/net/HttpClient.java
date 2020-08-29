@@ -27,8 +27,8 @@ public class HttpClient {
 
     private static HttpClient instance;
 
-    public static final long connectTimeoutMills = 10;
-    public static final long readTimeoutMills = 10;
+    public static final long connectTimeoutMills = 30;
+    public static final long readTimeoutMills = 30;
     private static NetProvider sProvider = null;
 
 
