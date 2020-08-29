@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import com.fancy.rxmvp.net.interceptor.LoggingInterceptor;
 import com.fancy.rxmvp.net.interceptor.RequestHeader;
 import com.fancy.rxmvp.net.interceptor.XInterceptor;
+
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -93,7 +94,7 @@ public class HttpClient {
                 ? provider.configConnectTimeoutMills() : connectTimeoutMills, TimeUnit.SECONDS);
         builder.readTimeout(provider.configReadTimeoutMills() != 0
                 ? provider.configReadTimeoutMills() : readTimeoutMills, TimeUnit.SECONDS);
-
+        builder.retryOnConnectionFailure(true);
         RequestHeader header = provider.configHeader();
         if (header != null) {
             builder.addNetworkInterceptor(new XInterceptor(header));
