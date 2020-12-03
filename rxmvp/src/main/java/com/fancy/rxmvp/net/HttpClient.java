@@ -139,7 +139,7 @@ public class HttpClient {
     /**
      * 设置订阅 和 所在的线程环境
      */
-    public <W> Observable getObservable(Observable<W> o) {
+    public <W> Observable<W> getObservable(Observable<W> o) {
         return o.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
