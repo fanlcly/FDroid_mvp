@@ -1,6 +1,7 @@
 package com.fancy.rx_android_mvp;
 
-import fancy.com.rxmvp.BuildConfig;
+
+import com.bigkoo.pickerview.BuildConfig;
 
 /**
  * 请求地址常量

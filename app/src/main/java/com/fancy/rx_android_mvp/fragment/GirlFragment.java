@@ -24,7 +24,6 @@ import com.fancy.rx_android_mvp.net.Api;
 import com.fancy.rx_android_mvp.net.BaseModle;
 import com.fancy.rx_android_mvp.net.MyCallBack;
 import com.fancy.rxmvp.mvp.XBaseLazyFragment;
-import com.fancy.rxmvp.net.HttpClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,41 +84,42 @@ public class GirlFragment extends XBaseLazyFragment {
      */
     private void requestData() {
         final Observable<Response<BaseModle<List<GirlEntity>>>> observable = getRequestMethod();
-        HttpClient.getInstance().getObservable(observable.compose(this.bindToLifecycle()))
-                .subscribe(new MyCallBack<List<GirlEntity>>(mActivity) {
-                    @Override
-                    protected void onSuccess(List<GirlEntity> girlEntities) {
-                        refreshLayout.setRefreshing(false);
-                        if (currentPage == 0) {
-                            items.clear();
-                        }
-                        girlAdapter.addData(girlEntities);
-                        if (girlEntities.size() < 20) {
-                            girlAdapter.loadMoreEnd();
-                        } else {
-                            girlAdapter.loadMoreComplete();
-                            currentPage++;
-                        }
-                    }
-
-
-                    @Override
-                    public void onFail(String message, int failCode) {
-                        refreshLayout.setRefreshing(false);
-                        if (currentPage == 0) {
-                            ToastUtils.init(mActivity).show(message);
-                        } else {
-                            girlAdapter.loadMoreFail();
-                        }
-                    }
-
-                });
+//        HttpClient.getInstance().getObservable(observable.compose(this.bindToLifecycle()))
+//                .subscribe(new MyCallBack<List<GirlEntity>>(mActivity) {
+//                    @Override
+//                    protected void onSuccess(List<GirlEntity> girlEntities) {
+//                        refreshLayout.setRefreshing(false);
+//                        if (currentPage == 0) {
+//                            items.clear();
+//                        }
+//                        girlAdapter.addData(girlEntities);
+//                        if (girlEntities.size() < 20) {
+//                            girlAdapter.loadMoreEnd();
+//                        } else {
+//                            girlAdapter.loadMoreComplete();
+//                            currentPage++;
+//                        }
+//                    }
+//
+//
+//                    @Override
+//                    public void onFail(String message, int failCode) {
+//                        refreshLayout.setRefreshing(false);
+//                        if (currentPage == 0) {
+//                            ToastUtils.init(mActivity).show(message);
+//                        } else {
+//                            girlAdapter.loadMoreFail();
+//                        }
+//                    }
+//
+//                });
 
     }
 
 
     public Observable<Response<BaseModle<List<GirlEntity>>>> getRequestMethod() {
-        return HttpClient.getInstance().getObservable(Api.getApiService().getGirlImage("baiduimage","性感"));
+//        return HttpClient.getInstance().getObservable(Api.getApiService().getGirlImage("baiduimage","性感"));
+        return null;
     }
 
 

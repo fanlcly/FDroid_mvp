@@ -7,8 +7,6 @@ import android.util.Log;
 import com.fancy.rx_android_mvp.fragment.JokeFragment;
 import com.fancy.rx_android_mvp.net.Api;
 import com.fancy.rxmvp.mvp.XBasePresent;
-import com.fancy.rxmvp.net.HttpClient;
-import com.fancy.rxmvp.net.RxBaseCallBack;
 
 import java.util.List;
 
@@ -23,22 +21,22 @@ import retrofit2.Response;
  */
 public class HomePresent extends XBasePresent<JokeFragment> {
         public void LoadData(Context context) {
-            HttpClient.getInstance().getObservable(Api.getApiService().totalEmployInfo())
-                    .compose(getV().<Response<List<Entity>>>bindToLifecycle())
-                    .subscribe(new RxBaseCallBack<List<Entity>>(context) {
-                        @Override
-                        public void onSuc(List<Entity> response) {
-                            Log.i("fanlcly", "onSuc: 成功了");
-                        }
-
-
-
-                        @Override
-                        public void onFail(String message, int failCode) {
-                            Log.i("fanlcly", "onFail: 失败了");
-                        }
-
-                    });
+//            HttpClient.getInstance().getObservable(Api.getApiService().totalEmployInfo())
+//                    .compose(getV().<Response<List<Entity>>>bindToLifecycle())
+//                    .subscribe(new RxBaseCallBack<List<Entity>>(context) {
+//                        @Override
+//                        public void onSuc(List<Entity> response) {
+//                            Log.i("fanlcly", "onSuc: 成功了");
+//                        }
+//
+//
+//
+//                        @Override
+//                        public void onFail(String message, int failCode) {
+//                            Log.i("fanlcly", "onFail: 失败了");
+//                        }
+//
+//                    });
 
 
         }

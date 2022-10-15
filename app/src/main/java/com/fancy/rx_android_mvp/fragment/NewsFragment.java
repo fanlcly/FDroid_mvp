@@ -28,8 +28,6 @@ import com.fancy.rx_android_mvp.net.BaseModle;
 import com.fancy.rx_android_mvp.net.MyCallBack;
 import com.fancy.rx_android_mvp.ui.BaseWebActivity;
 import com.fancy.rxmvp.mvp.XBaseLazyFragment;
-import com.fancy.rxmvp.net.HttpClient;
-import com.fancy.rxmvp.net.RxBaseCallBack;
 
 import io.reactivex.Observable;
 import retrofit2.Response;
@@ -96,41 +94,41 @@ public class NewsFragment extends XBaseLazyFragment {
      */
     private void requestData() {
         final Observable<Response<NewsModel>> observable = getRequestMethod();
-        HttpClient.getInstance().getObservable(observable.compose(this.bindToLifecycle()))
-                .subscribe(new RxBaseCallBack<NewsModel>(mActivity) {
-
-                    @Override
-                    public void onSuc(NewsModel newsModel) {
-                        refreshLayout.setRefreshing(false);
-                        if (currentPage == 0) {
-                            items.clear();
-                        }
-                        newsAdapter.addData(newsModel.getResult().getData());
-                        if (newsModel.getResult().getData().size() < 20) {
-                            newsAdapter.loadMoreEnd();
-                        } else {
-                            newsAdapter.loadMoreComplete();
-                            currentPage++;
-                        }
-                    }
-
-                    @Override
-                    public void onFail(String message, int failCode) {
-                        refreshLayout.setRefreshing(false);
-                        if (currentPage == 0) {
-                            ToastUtils.init(mActivity).show(message);
-                        } else {
-                            newsAdapter.loadMoreFail();
-                        }
-                    }
-
-                });
+//        HttpClient.getInstance().getObservable(observable.compose(this.bindToLifecycle()))
+//                .subscribe(new RxBaseCallBack<NewsModel>(mActivity) {
+//
+//                    @Override
+//                    public void onSuc(NewsModel newsModel) {
+//                        refreshLayout.setRefreshing(false);
+//                        if (currentPage == 0) {
+//                            items.clear();
+//                        }
+//                        newsAdapter.addData(newsModel.getResult().getData());
+//                        if (newsModel.getResult().getData().size() < 20) {
+//                            newsAdapter.loadMoreEnd();
+//                        } else {
+//                            newsAdapter.loadMoreComplete();
+//                            currentPage++;
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFail(String message, int failCode) {
+//                        refreshLayout.setRefreshing(false);
+//                        if (currentPage == 0) {
+//                            ToastUtils.init(mActivity).show(message);
+//                        } else {
+//                            newsAdapter.loadMoreFail();
+//                        }
+//                    }
+//
+//                });
 
     }
 
 
     public Observable<Response<NewsModel>> getRequestMethod() {
-        return HttpClient.getInstance().getObservable(Api.getApiService().getNews("top","3dc86b09a2ee2477a5baa80ee70fcdf5"));
+        return null;
     }
 
 

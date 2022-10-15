@@ -1,7 +1,6 @@
 package com.fancy.rx_android_mvp.net;
 
 import com.fancy.rx_android_mvp.UrlConfig;
-import com.fancy.rxmvp.net.HttpClient;
 
 /**
  * file explain
@@ -18,7 +17,7 @@ public class Api {
         if (apiService == null) {
             synchronized (Api.class) {
                 if (apiService == null) {
-                    apiService = HttpClient.getInstance().getRetrofit(UrlConfig.BASE_URL, true).create(ApiService.class);
+                    apiService = null;
                 }
             }
         }

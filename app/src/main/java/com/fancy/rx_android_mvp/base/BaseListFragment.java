@@ -16,8 +16,6 @@ import com.fancy.androidutils.utils.ToastUtils;
 import com.fancy.rx_android_mvp.widget.CustomEmptyView;
 import com.fancy.rx_android_mvp.widget.CustomErrorView;
 import com.fancy.rxmvp.mvp.XBaseFragment;
-import com.fancy.rxmvp.net.HttpClient;
-import com.fancy.rxmvp.net.RxBaseCallBack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,60 +113,6 @@ public abstract class BaseListFragment<T> extends XBaseFragment {
 //            dialog.show();
 //        }
         final Observable<Response<List<T>>> observable = getRequestMethod();
-        HttpClient.getInstance().getObservable(observable.compose(this.<Response<List<T>>>bindToLifecycle()))
-                .subscribe(new RxBaseCallBack<List<T>>(mActivity) {
-                    @Override
-                    public void onSuc(List<T> response) {
-                        if (refreshLayout != null) {
-                            refreshLayout.setRefreshing(false);
-                        }
-                        if (currentPage == 0) {
-                            items.clear();
-                        }
-                        // dialog.dismiss();
-                        List<T> list = response;
-
-                        if (list == null) {
-                            return;
-                        }
-                        mBaseAdapter.addData(list);
-                        if (list.size() < 10) {
-                            mBaseAdapter.loadMoreEnd();
-                        } else {
-                            mBaseAdapter.loadMoreComplete();
-                            currentPage++;
-                        }
-
-                        if (emptyView != null) {
-                            if (items != null && items.size() == 0) {
-                                mBaseAdapter.loadMoreEnd();
-                                emptyView.setVisibility(View.VISIBLE);
-                            } else {
-                                emptyView.setVisibility(View.GONE);
-                            }
-                        }
-
-                    }
-
-                    @Override
-                    public void onFail(String message, int failCode) {
-                        if (refreshLayout != null) {
-                            refreshLayout.setRefreshing(false);
-                        }
-//                dialog.dismiss();
-                        if (currentPage == 0) {
-                            if (errorView != null) {
-                                errorView.setVisibility(View.VISIBLE);
-                            } else {
-                                ToastUtils.init(mActivity).show(message);
-                            }
-                        } else {
-                            mBaseAdapter.loadMoreFail();
-                            ToastUtils.init(mActivity).show(message);
-                        }
-                    }
-
-                });
 
     }
 

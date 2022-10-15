@@ -12,8 +12,6 @@ import java.util.List;
 import fancy.com.rx_android_mvp.R;
 import com.fancy.rx_android_mvp.base.BaseListActivity;
 import com.fancy.rx_android_mvp.entity.ListEntity;
-import com.fancy.rx_android_mvp.net.Api;
-import com.fancy.rxmvp.net.HttpClient;
 import io.reactivex.Observable;
 import retrofit2.Response;
 
@@ -42,7 +40,7 @@ public class RecyclerActivity extends BaseListActivity<ListEntity> {
 
     @Override
     public Observable<Response<List<ListEntity>>> getRequestMethod() {
-        return HttpClient.getInstance().getObservable(Api.getApiService().totalEmployInfo());
+        return null;
     }
 
     @Override

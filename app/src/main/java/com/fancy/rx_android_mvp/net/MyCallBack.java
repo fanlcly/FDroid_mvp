@@ -2,7 +2,6 @@ package com.fancy.rx_android_mvp.net;
 
 import android.content.Context;
 
-import com.fancy.rxmvp.net.RxBaseCallBack;
 
 /**
  * 业务层的网络回调
@@ -11,10 +10,10 @@ import com.fancy.rxmvp.net.RxBaseCallBack;
  * @version 1.0 2019/5/5 0005
  * @since JDK 1.8
  */
-public abstract class MyCallBack<T> extends RxBaseCallBack<BaseModle<T>> {
-    /**
+public abstract class MyCallBack<T> /*extends RxBaseCallBack<BaseModle<T>>*/ {
+   /* *//**
      * @param context 上下文
-     */
+     *//*
     public MyCallBack(Context context) {
         super(context);
     }
@@ -33,6 +32,6 @@ public abstract class MyCallBack<T> extends RxBaseCallBack<BaseModle<T>> {
         }
     }
 
-    protected abstract void onSuccess(T t);
+    protected abstract void onSuccess(T t);*/
 }
 

@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.fancy.rx_android_mvp.UrlConfig;
-import com.fancy.rxmvp.net.HttpClient;
 
 
 /**
@@ -63,7 +62,7 @@ public class ServiceHelper {
             default:
                 baseUrl = UrlConfig.BASE_URL;
         }
-        s = HttpClient.getInstance().getRetrofit(baseUrl,true).create(service);
+//        s = HttpClient.getInstance().getRetrofit(baseUrl,true).create(service);
         serviceMap.put(key, s);
         return (S) s;
     }

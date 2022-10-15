@@ -4,16 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
-import com.fancy.rx_android_mvp.net.HeaderInterceptor;
-
-import fancy.com.rxmvp.BuildConfig;
 
 import com.fancy.rx_android_mvp.service.X5NetService;
-import com.fancy.rxmvp.net.HttpClient;
-import com.fancy.rxmvp.net.NetProvider;
-import com.fancy.rxmvp.net.interceptor.RequestHeader;
-
-import okhttp3.Interceptor;
 
 /**
  * myapplication
@@ -32,32 +24,7 @@ public class MyApplication extends Application {
         mContext = getApplicationContext();
         // 初始化X5WebView
         preInitX5Core();
-        HttpClient.registerProvider(new NetProvider() {
-            @Override
-            public long configConnectTimeoutMills() {
-                return 15;
-            }
 
-            @Override
-            public long configReadTimeoutMills() {
-                return 15;
-            }
-
-            @Override
-            public Interceptor[] configInterceptors() {
-                return new Interceptor[0];
-            }
-
-            @Override
-            public boolean configLogEnable() {
-                return BuildConfig.DEBUG ? true : false;
-            }
-
-            @Override
-            public RequestHeader configHeader() {
-                return new HeaderInterceptor();
-            }
-        });
     }
 
 
