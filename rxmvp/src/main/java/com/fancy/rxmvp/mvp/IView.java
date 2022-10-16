@@ -2,6 +2,7 @@ package com.fancy.rxmvp.mvp;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 
 /**
  * file explain
@@ -16,6 +17,8 @@ public interface IView<P> {
     void bindEvent();
 
     int getLayoutId();
+
+    ViewGroup getLayoutView();
 
     void initData(Bundle savedInstanceState);
 

@@ -34,8 +34,11 @@ public abstract class XBaseLazyFragment <P extends IPresent>
 
         if (getLayoutId() > 0) {
             setContentView(getLayoutId());
-            bindUI(getRealRootView());
+        } else {
+            setContentView(getLayoutView());
         }
+        bindUI(getRealRootView());
+
         if (useEventBus()) {
             BusProvider.getBus().register(this);
         }

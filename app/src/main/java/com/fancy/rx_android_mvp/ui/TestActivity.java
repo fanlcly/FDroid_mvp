@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -63,6 +64,11 @@ public class TestActivity extends XBaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_test;
+    }
+
+    @Override
+    public ViewGroup getLayoutView() {
+        return null;
     }
 
     @Override

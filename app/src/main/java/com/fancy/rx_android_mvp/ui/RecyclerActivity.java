@@ -2,6 +2,7 @@ package com.fancy.rx_android_mvp.ui;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.fancy.androidutils.recyclerviewhelper.base.BaseQuickAdapter;
 import com.fancy.androidutils.recyclerviewhelper.base.BaseViewHolder;
@@ -76,6 +77,11 @@ public class RecyclerActivity extends BaseListActivity<ListEntity> {
     @Override
     public int getLayoutId() {
         return R.layout.activity_recycler;
+    }
+
+    @Override
+    public ViewGroup getLayoutView() {
+        return null;
     }
 
 }

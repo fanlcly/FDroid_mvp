@@ -39,9 +39,12 @@ public abstract class XBaseActivity<P extends IPresent> extends RxAppCompatActiv
 
         if (getLayoutId() > 0) {
             setContentView(getLayoutId());
-            bindUI(null);
-            bindEvent();
+        } else {
+            setContentView(getLayoutView());
         }
+
+        bindUI(null);
+        bindEvent();
 
         initData(savedInstanceState);
 

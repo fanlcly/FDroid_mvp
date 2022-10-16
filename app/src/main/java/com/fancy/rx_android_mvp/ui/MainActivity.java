@@ -3,6 +3,7 @@ package com.fancy.rx_android_mvp.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -35,6 +36,11 @@ public class MainActivity extends XBaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_main;
+    }
+
+    @Override
+    public ViewGroup getLayoutView() {
+        return null;
     }
 
 

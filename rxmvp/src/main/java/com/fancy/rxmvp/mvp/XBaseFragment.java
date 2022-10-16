@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.Unbinder;
+
 import com.fancy.rxmvp.MvpConfig;
 import com.fancy.rxmvp.event.BusProvider;
 import com.fancy.rxmvp.utils.KnifeHelper;
@@ -24,7 +25,7 @@ import com.trello.rxlifecycle3.components.support.RxFragment;
  * @version 1.0 2019/4/16 0016
  * @since JDK 1.8
  */
-public  abstract class XBaseFragment<P extends IPresent> extends RxFragment implements IView<P> {
+public abstract class XBaseFragment<P extends IPresent> extends RxFragment implements IView<P> {
     private VDelegate vDelegate;
     private P p;
     protected Activity mActivity;
@@ -36,13 +37,16 @@ public  abstract class XBaseFragment<P extends IPresent> extends RxFragment impl
     private Unbinder unbinder;
 
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         layoutInflater = inflater;
-        if (rootView == null && getLayoutId() > 0) {
-            rootView = inflater.inflate(getLayoutId(), null);
+        if (rootView == null) {
+            if (getLayoutId() > 0) {
+                rootView = inflater.inflate(getLayoutId(), null);
+            } else {
+                rootView = getLayoutView();
+            }
             bindUI(rootView);
         } else {
             ViewGroup viewGroup = (ViewGroup) rootView.getParent();

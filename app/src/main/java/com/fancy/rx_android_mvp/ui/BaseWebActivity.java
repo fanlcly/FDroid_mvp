@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -41,7 +42,10 @@ public class BaseWebActivity  extends XBaseActivity implements View.OnClickListe
         return R.layout.base_web_activity;
     }
 
-
+    @Override
+    public ViewGroup getLayoutView() {
+        return null;
+    }
 
 
     @Override
