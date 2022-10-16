@@ -3,6 +3,7 @@ package com.fancy.rx_android_mvp.fragment;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.view.ViewGroup;
 
 import fancy.com.rx_android_mvp.R;
 import io.reactivex.Observable;
@@ -85,6 +86,11 @@ public class JokeFragment extends BaseLazyListFragment<ListEntity> {
     @Override
     public int getLayoutId() {
         return R.layout.activity_recycler;
+    }
+
+    @Override
+    public ViewGroup getLayoutView() {
+        return null;
     }
 
 }

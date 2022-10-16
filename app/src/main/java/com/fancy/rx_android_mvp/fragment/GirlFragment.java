@@ -2,6 +2,7 @@ package com.fancy.rx_android_mvp.fragment;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -126,6 +127,11 @@ public class GirlFragment extends XBaseLazyFragment {
     @Override
     public int getLayoutId() {
         return R.layout.fragment_recycler;
+    }
+
+    @Override
+    public ViewGroup getLayoutView() {
+        return null;
     }
 
     @Override
